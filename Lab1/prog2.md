@@ -1,0 +1,71 @@
+int main(void)
+{
+  int a=5;
+  int b=10;
+  
+  if(a==0)
+    a=a+10;
+  b=a;
+}
+
+
+
+int main(void)
+
+{
+
+   0:	b480      	push	{r7}
+
+   2:	b083      	sub	sp, #12
+
+   4:	af00      	add	r7, sp, #0
+
+  int a=5;
+
+   6:	2305      	movs	r3, #5
+
+   8:	607b      	str	r3, [r7, #4]
+
+  int b=10;
+
+   a:	230a      	movs	r3, #10
+
+   c:	603b      	str	r3, [r7, #0]
+
+  
+
+  if(a==0)
+
+   e:	687b      	ldr	r3, [r7, #4]
+
+  10:	2b00      	cmp	r3, #0
+
+  12:	d102      	bne.n	1a <main+0x1a>
+
+    a=a+10;
+
+  14:	687b      	ldr	r3, [r7, #4]
+
+  16:	330a      	adds	r3, #10
+
+  18:	607b      	str	r3, [r7, #4]
+
+  b=a;
+
+  1a:	687b      	ldr	r3, [r7, #4]
+
+  1c:	603b      	str	r3, [r7, #0]
+
+  1e:	2300      	movs	r3, #0
+
+}
+
+  20:	4618      	mov	r0, r3
+
+  22:	370c      	adds	r7, #12
+
+  24:	46bd      	mov	sp, r7
+
+  26:	bc80      	pop	{r7}
+
+  28:	4770      	bx	lr
